@@ -1,20 +1,30 @@
+
+
 ---
+import NavbarMp from "../components/Navbar-mp.astro";
+
 const supplierPoints = [
   {
-    title: 'Red de proveedores validada',
+    title: 'Selección por disponibilidad real',
     description:
-      'Trabajamos con aliados que responden con tiempos, documentación y continuidad operativa.',
+      'Evaluamos proveedores en función de stock, tiempos y condiciones al momento de cada proceso.',
   },
   {
     title: 'Criterio antes que catálogo',
     description:
-      'Seleccionamos soluciones según contexto, presupuesto y exigencia real del proyecto.',
+      'Priorizamos la opción más adecuada para cumplir con el requerimiento, no una lista fija.',
   },
   {
-    title: 'Seguimiento de punta a punta',
+    title: 'Continuidad operativa',
     description:
-      'Acompañamos el proceso con comunicación clara para que cada compra tenga trazabilidad.',
+      'Mantenemos relaciones activas con proveedores que permiten sostener la operación en el tiempo.',
   },
+  {
+    title: 'Flexibilidad comercial',
+    description:
+      'Trabajamos con proveedores que entienden la dinámica del mercado público y se adaptan a sus condiciones.',
+  },
+
 ];
 
 const productCards = [
@@ -57,15 +67,7 @@ const storyBullets = [
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar container" aria-label="Principal">
-        <a class="brand" href="#hero">MP Digital</a>
-        <div class="nav-links">
-          <a href="#proveedores">Proveedores</a>
-          <a href="#vendemos">Qué vendemos</a>
-          <a href="#historia">Historia</a>
-        </div>
-        <a class="nav-cta" href="#vendemos">Conversemos</a>
-      </nav>
+      <NavbarMp/>
     </header>
 
     <main>
@@ -82,13 +84,12 @@ const storyBullets = [
         </div>
 
         <div class="hero-content container">
-          <p class="eyebrow hero-copy">Operación comercial con criterio</p>
+          <p class="eyebrow hero-copy">Eficiencia comercial en Mercado Público</p>
           <h1 class="hero-title hero-copy">
-            Soluciones corporativas que transmiten orden, confianza y ejecución.
+            Gestionamos ventas al Estado con foco en cumplimiento y resultados.
           </h1>
           <p class="hero-description hero-copy">
-            Construimos relaciones comerciales sólidas, seleccionamos proveedores confiables y
-            presentamos propuestas claras para que cada decisión avance con respaldo.
+            Agilizamos el proceso comercial para responder mejor y concretar más oportunidades.
           </p>
           <div class="hero-actions hero-copy">
             <a class="button-primary" href="#vendemos">Ver soluciones</a>
@@ -100,11 +101,10 @@ const storyBullets = [
       <section class="section section-dark" id="proveedores">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow copper">Proveedores confiables</p>
-            <h2>Elegimos respaldo operativo antes que ruido comercial.</h2>
+            <p class="eyebrow copper">Selección y gestión de proveedores</p>
+            <h2>Cómo operamos con proveedores</h2>
             <p>
-              Nuestro enfoque combina análisis, red de aliados y seguimiento real para que cada
-              propuesta se vea seria desde el primer contacto.
+              No trabajamos con un catálogo fijo. Seleccionamos proveedores según disponibilidad real, tiempos de respuesta y capacidad de cumplimiento en cada proceso.
             </p>
           </div>
 
@@ -116,6 +116,11 @@ const storyBullets = [
                 <p>{point.description}</p>
               </article>
             ))}
+          </div>
+
+          <div>
+
+
           </div>
         </div>
       </section>
@@ -186,10 +191,21 @@ const storyBullets = [
         if (!heroImage || !heroCopies.length) return;
 
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-        tl.fromTo(heroImage, { scale: 1.12 }, { scale: 1, duration: 1.8 });
+        tl.fromTo(
+          heroImage, 
+          
+          { scale: 1,
+            opacity: -1,
+           }, 
+          
+          { scale: 1.08, 
+            opacity: 1,
+            duration: 2.8 }
+        );
+
         tl.fromTo(
           heroCopies,
-          { y: 32, opacity: 0 },
+          { y: 0, opacity: 0 },
           { y: 0, opacity: 1, duration: 1, stagger: 0.12 },
           '-=1.1'
         );
@@ -201,6 +217,8 @@ const storyBullets = [
         runHeroAnimation();
       }
     </script>
+
+    
   </body>
 </html>
 
@@ -256,19 +274,6 @@ const storyBullets = [
     padding-top: 1.25rem;
   }
 
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.95rem 1.2rem;
-    background: rgba(15, 23, 32, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 999px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
-  }
-
   .brand {
     font-size: 0.95rem;
     font-weight: 700;
@@ -276,21 +281,15 @@ const storyBullets = [
     text-transform: uppercase;
   }
 
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    color: rgba(245, 247, 250, 0.82);
-    font-size: 0.96rem;
-  }
 
-  .nav-links a:hover,
-  .nav-links a:focus-visible,
   .button-secondary:hover,
   .button-secondary:focus-visible {
     color: #fff;
+    box-shadow: 
+      inset 0 0 15px rgba(255, 255, 255, 0.39),
+      0 20px 60px rgba(0, 0, 0, 0.2);
   }
 
-  .nav-cta,
   .button-primary,
   .button-secondary {
     display: inline-flex;
@@ -300,7 +299,6 @@ const storyBullets = [
     transition: 180ms ease;
   }
 
-  .nav-cta,
   .button-primary {
     background: var(--brand-blue);
     color: var(--text-primary);
@@ -308,8 +306,6 @@ const storyBullets = [
     font-weight: 600;
   }
 
-  .nav-cta:hover,
-  .nav-cta:focus-visible,
   .button-primary:hover,
   .button-primary:focus-visible {
     background: var(--brand-blue-hover);
@@ -319,7 +315,7 @@ const storyBullets = [
   .button-secondary {
     border: 1px solid rgba(245, 247, 250, 0.18);
     padding: 0.85rem 1.35rem;
-    color: rgba(245, 247, 250, 0.86);
+    color: rgba(245, 247, 250, 0.952);
   }
 
   .hero {
@@ -346,9 +342,8 @@ const storyBullets = [
     width: 130%;
     height: 130%;
     object-fit: cover;
-    /* Esto asegura que el recorte se haga desde la izquierda, manteniendo visible el lado derecho */
-    object-position: right center; 
-    transform-origin: right center; /* Opcional: ajusta el origen de la animación si usas transform */
+    object-position: center; 
+    transform-origin: center; 
     will-change: transform;
   }
 
@@ -384,7 +379,7 @@ const storyBullets = [
 
 .hero-title {
   font-size: clamp(2.4rem, 4.2vw, 4.2rem);
-  max-width: 14ch;
+  max-width: 16ch;
 }
 
   .hero-description,
@@ -459,7 +454,7 @@ const storyBullets = [
 
   .supplier-panel {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
     padding: 1.25rem;
     border-radius: 24px;
@@ -470,11 +465,31 @@ const storyBullets = [
 
   .supplier-item {
     padding: 1.75rem;
-    border-right: 1px solid rgba(201, 137, 75, 0.25);
+    position: relative; /* Clave para que los separadores se posicionen bien */
   }
 
-  .supplier-item:last-child {
-    border-right: 0;
+  /* 1. SEPARADOR VERTICAL (entre columnas) */
+  /* Se aplica a los elementos de la izquierda (1 y 3) */
+  .supplier-item:nth-child(odd)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15%;      /* Lo separa de arriba */
+    height: 70%;   /* No llega hasta abajo */
+    width: 1px;
+    background-color: rgba(201, 137, 75, 0.25);
+  }
+
+  /* 2. SEPARADOR HORIZONTAL (entre filas) */
+  /* Se aplica a los elementos de la primera fila (1 y 2) */
+  .supplier-item:nth-child(-n+2)::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15%;     /* Lo separa de la izquierda */
+    width: 70%;    /* No llega hasta la derecha */
+    height: 1px;
+    background-color: rgba(201, 137, 75, 0.25);
   }
 
   .supplier-icon {
@@ -566,19 +581,6 @@ const storyBullets = [
   }
 
   @media (max-width: 960px) {
-    .navbar {
-      border-radius: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .nav-links {
-      order: 3;
-      width: 100%;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
 
     .supplier-panel,
     .product-grid,
@@ -599,14 +601,6 @@ const storyBullets = [
   @media (max-width: 640px) {
     .site-header {
       padding-top: 0.75rem;
-    }
-
-    .navbar {
-      padding: 1rem;
-    }
-
-    .nav-cta {
-      width: 100%;
     }
 
     .hero-content {
