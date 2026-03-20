@@ -5,50 +5,55 @@ import NavbarMp from "../components/Navbar-mp.astro";
 
 const supplierPoints = [
   {
-    title: 'Selección por disponibilidad real',
+    title: 'Disponibilidad real',
     description:
-      'Evaluamos proveedores en función de stock, tiempos y condiciones al momento de cada proceso.',
+      'Evaluamos proveedores según stock, tiempos y condiciones en cada proceso.',
   },
   {
-    title: 'Criterio antes que catálogo',
+    title: 'Criterio sobre catálogo',
     description:
-      'Priorizamos la opción más adecuada para cumplir con el requerimiento, no una lista fija.',
+      'Priorizamos la opción más adecuada para cumplir con el requerimiento, no una base predefinida',
   },
   {
     title: 'Continuidad operativa',
     description:
-      'Mantenemos relaciones activas con proveedores que permiten sostener la operación en el tiempo.',
+      'Mantenemos relaciones activas que permiten dar estabilidad y respuesta sostenida.',
   },
   {
     title: 'Flexibilidad comercial',
     description:
-      'Trabajamos con proveedores que entienden la dinámica del mercado público y se adaptan a sus condiciones.',
+      'Nos adaptamos a las condiciones de cada proceso para responder de forma oportuna.',
   },
 
 ];
 
 const productCards = [
   {
-    title: 'Abastecimiento técnico',
+    title: 'Hardware',
     description:
-      'Equipos, insumos y soluciones para operación diaria con foco en confiabilidad y tiempos de respuesta.',
+      'Componentes y equipamiento asociado a infraestructura tecnológica.',
   },
   {
-    title: 'Compras estratégicas',
+    title: 'Tecnología',
     description:
-      'Búsqueda y comparación de alternativas para licitaciones, contratos y requerimientos de mayor escala.',
+      'Equipos, periféricos y soluciones necesarias para la operación digital.',
   },
   {
-    title: 'Soporte comercial',
+    title: 'Insumos de oficina',
     description:
-      'Presentamos propuestas claras, ordenadas y listas para acelerar validaciones internas.',
+      'Papelería, tóners y productos de uso diario institucional.',
+  },
+    {
+    title: 'Requerimientos especiales',
+    description:
+      'Cuando una compra incluye productos fuera de estas líneas, gestionamos su abastecimiento a través de proveedores asociados.',
   },
 ];
 
 const storyBullets = [
-  'Aprendimos a sostener operación sin improvisar.',
-  'Diseñamos procesos reales para compras y seguimiento.',
-  'Creamos una separación clara y saludable con DigitalWorks.',
+  'Sostenemos la operación con estructura',
+  'Diseñamos procesos reales para compra y seguimiento',
+  'Separamos gestión comercial de ejecución operativa',
 ];
 ---
 
@@ -102,9 +107,11 @@ const storyBullets = [
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow copper">Selección y gestión de proveedores</p>
-            <h2>Cómo operamos con proveedores</h2>
+            <h2>Relación con proveedores</h2>
             <p>
-              No trabajamos con un catálogo fijo. Seleccionamos proveedores según disponibilidad real, tiempos de respuesta y capacidad de cumplimiento en cada proceso.
+              Buscamos construir relaciones de trabajo estables con proveedores que quieran crecer en el mercado público.
+
+              Operamos absorbiendo los tiempos de pago del sistema, permitiendo pagos más inmediatos y continuidad en la operación.
             </p>
           </div>
 
@@ -118,9 +125,10 @@ const storyBullets = [
             ))}
           </div>
 
-          <div>
-
-
+          <div class="supplier-panel proveedores">
+            <h3 class="top-prov">Relación con proveedores</h3>
+            <p>Buscamos construir relaciones de trabajo estables con proveedores que quieran crecer en el mercado público. <br>
+            Operamos absorbiendo los tiempos de pago del sistema, permitiendo pagos más inmediatos y continuidad operativa.</p>
           </div>
         </div>
       </section>
@@ -128,12 +136,12 @@ const storyBullets = [
       <section class="section section-light" id="vendemos">
         <div class="container">
           <div class="section-heading narrow">
-            <p class="eyebrow muted">Qué vendemos</p>
-            <h2>Oferta comercial clara, flexible y lista para entornos exigentes.</h2>
+            <p class="eyebrow muted">Qué abastecemos</p>
+            <h2>Tecnología y abastecimiento operativo para el Estado</h2>
             <p>
-              Organizamos cada solución para que sea fácil de entender, comparar y validar. Menos
-              discurso, más criterio aplicado a resultados concretos.
+              Nos enfocamos en tecnología, hardware e insumos de oficina. <br>Cuando el proceso lo requiere, gestionamos requerimientos complementarios sin afectar el cumplimiento.
             </p>
+            <h3>Priorizamos el cumplimiento del proceso por sobre la rigidez del catálogo.</h3>
           </div>
 
           <div class="product-grid">
@@ -142,7 +150,6 @@ const storyBullets = [
                 <div class="product-accent"></div>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
-                <span>Enfoque consultivo</span>
               </article>
             ))}
           </div>
@@ -153,14 +160,18 @@ const storyBullets = [
         <div class="container story-grid">
           <div class="section-heading story-copy">
             <p class="eyebrow copper">Nuestra historia</p>
-            <h2>Empezamos resolviendo necesidades reales. Seguimos creciendo con la misma disciplina.</h2>
-            <p>
-              MP Digital nació desde la operación, entendiendo cómo se sostiene el trabajo diario y
-              qué necesita una empresa para comprar mejor, avanzar con seguridad y cuidar su ritmo.
+            <h2>Gestión estructurada para la operación en Mercado Público</h2>
+                          <p>
+                          MP Digital nace desde la experiencia directa en procesos de venta y abastecimiento en Mercado Público.
+
+              Con el tiempo entendimos cómo se sostiene realmente una operación: cómo se toman decisiones, cómo se gestionan los tiempos y qué permite dar continuidad sin depender de la improvisación.
+
+              Ese aprendizaje nos llevó a estructurar una forma de trabajo clara, enfocada en cumplir y sostener resultados en el tiempo.  
+
+              <br><br>Hoy operamos con una base técnica y una mirada práctica del mercado, entendiendo tanto al comprador como al proceso completo.
             </p>
             <p class="story-note">
-              Parte de <span>DigitalWorks</span>, con una identidad comercial enfocada en orden,
-              servicio y ejecución responsable.
+              Parte de <span> <a href="https://digitalworks.cl/" target="_blank">DigitalWorks</a> </span>, donde desarrollamos soluciones tecnológicas y procesos para empresas en crecimiento.
             </p>
           </div>
 
@@ -295,7 +306,7 @@ const storyBullets = [
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
+    border-radius: 10px;
     transition: 180ms ease;
   }
 
@@ -404,6 +415,22 @@ const storyBullets = [
     margin-top: 2rem;
   }
 
+    .proveedores {
+      display: flex;
+      flex-direction: column !important;
+      margin-top: 4rem;
+      align-items: center;
+      background-color: #1b2633 !important;
+    }
+
+    .top-prov {
+      text-align: center;
+      font-size: 1.32rem;
+      line-height: 1.2;
+    }
+
+
+
   .section {
     padding: clamp(5rem, 9vw, 7.5rem) 0;
   }
@@ -411,6 +438,8 @@ const storyBullets = [
   .section-dark {
     background: var(--bg-dark-soft);
   }
+
+
 
   .section-light {
     background: var(--bg-light);
@@ -526,6 +555,11 @@ const storyBullets = [
     border-bottom: 2px solid transparent;
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
   }
+
+  .product-card:last-child {
+    grid-column: 1 / -1; 
+  }
+
 
   .product-card:hover,
   .product-card:focus-within {
