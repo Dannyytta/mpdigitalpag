@@ -10,24 +10,21 @@ const footerLinks = [
 <footer class="site-footer" aria-labelledby="footer-title">
   <div class="container footer-shell">
     <div class="footer-intro">
-      <p class="footer-eyebrow">MP Digital</p>
-      <h2 id="footer-title">Cerramos cada proceso con orden, criterio comercial y foco en cumplimiento.</h2>
-      <p class="footer-description">
-        Una operación preparada para responder con claridad, avanzar con disciplina y sostener relaciones comerciales de largo plazo.
-      </p>
+      <h4 class="footer-eyebrow"> MP Digital</h4>
+
     </div>
 
     <div class="footer-content">
       <section class="footer-card footer-brand-block" aria-label="Resumen de marca">
-        <a class="footer-brand" href="#hero">MPD</a>
+        <img class="marca" src="/favicon.svg" alt="">
         <p>
-          Abastecimiento corporativo confiable para entornos exigentes y procesos donde el detalle sí importa.
+          Abastecimiento y gestión comercial para Mercado Público.
         </p>
-        <span class="footer-badge">Parte de DigitalWorks</span>
+        
       </section>
 
       <nav class="footer-card" aria-label="Navegación secundaria">
-        <p class="footer-card-title">Explorar</p>
+        <p class="footer-card-title">Navegación</p>
         <ul class="footer-links">
           {footerLinks.map((link) => (
             <li><a href={link.href}>{link.label}</a></li>
@@ -36,17 +33,31 @@ const footerLinks = [
       </nav>
 
       <section class="footer-card footer-highlight" aria-label="Mensaje de cierre">
-        <p class="footer-card-title">Nuestro enfoque</p>
-        <p>
-          Menos fricción operativa, más capacidad para responder mejor y concretar oportunidades reales.
-        </p>
-        <a class="footer-cta" href="#hero">Volver arriba</a>
+        <p class="footer-card-title">Contacto</p>
+        
+          <li>dbo@mpdigital.cl</li>
+          <li> spl@mpdigital.cl </li>
+          <li>+56 9 5520 5924</li>
+          
+          
+        
+        
+      </section>
+
+      <section class="footer-card footer-highlight" aria-label="Mensaje de cierre">
+        <p class="footer-card-title">Información</p>
+        <li>Operación estructurada para Mercado Público</li>
+        <li>Documentación disponible según requerimiento</li>
+        <li> <a href="/MPDigital_Ficha_Empresa.pdf" target="_blank">Descargar ficha empresa</a> </li>
+
+        
       </section>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 MP Digital. Ejecución comercial con enfoque responsable.</p>
-      <p>Diseñado para procesos claros, ágiles y sostenibles.</p>
+      <p>© 2026 MP Digital. Todos los derechos reservados.</p>
+      <p>Parte de <a href="https://digitalworks.cl/" target="_blank">DigitalWorks.</a><small>Diseño y desarrollo interno</small></p>
+      
     </div>
   </div>
 </footer>
@@ -60,7 +71,9 @@ const footerLinks = [
   }
 
   .footer-shell {
-    padding: clamp(4.5rem, 8vw, 6rem) 0 2rem;
+    width: auto;
+    height: 300px;
+    padding: 2rem;
   }
 
   .footer-intro {
@@ -110,33 +123,43 @@ const footerLinks = [
 
   .footer-content {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(220px, 1fr));
+    grid-template-columns:  repeat(4, minmax(220px, 1fr));
     gap: 1.25rem;
   }
 
+  .footer-brand,
   .footer-card {
-    min-height: 100%;
+    width: 15rem;
+    min-height: 50%;
     padding: 1.75rem;
-    border-radius: 24px;
+    border-radius: 15px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 20px 50px rgba(3, 8, 12, 0.24);
   }
 
-  .footer-brand {
-    display: inline-flex;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #f5f7fa;
+  .marca {
+    width: 25%;
   }
+
 
   .footer-brand-block p,
   .footer-highlight p {
     margin: 0;
   }
+
+  .footer-highlight li {
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: #c7d1db;
+  }
+
+  a:hover {
+    color: #c9894b;
+  } 
 
   .footer-badge {
     display: inline-flex;
@@ -191,6 +214,9 @@ const footerLinks = [
   .footer-bottom p {
     margin: 0;
   }
+
+  
+ 
 
   @media (max-width: 900px) {
     .footer-content {
