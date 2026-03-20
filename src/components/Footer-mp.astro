@@ -1,0 +1,214 @@
+---
+const footerLinks = [
+  { href: '#hero', label: 'Inicio' },
+  { href: '#proveedores', label: 'Proveedores' },
+  { href: '#vendemos', label: 'Qué vendemos' },
+  { href: '#historia', label: 'Historia' },
+];
+---
+
+<footer class="site-footer" aria-labelledby="footer-title">
+  <div class="container footer-shell">
+    <div class="footer-intro">
+      <p class="footer-eyebrow">MP Digital</p>
+      <h2 id="footer-title">Cerramos cada proceso con orden, criterio comercial y foco en cumplimiento.</h2>
+      <p class="footer-description">
+        Una operación preparada para responder con claridad, avanzar con disciplina y sostener relaciones comerciales de largo plazo.
+      </p>
+    </div>
+
+    <div class="footer-content">
+      <section class="footer-card footer-brand-block" aria-label="Resumen de marca">
+        <a class="footer-brand" href="#hero">MPD</a>
+        <p>
+          Abastecimiento corporativo confiable para entornos exigentes y procesos donde el detalle sí importa.
+        </p>
+        <span class="footer-badge">Parte de DigitalWorks</span>
+      </section>
+
+      <nav class="footer-card" aria-label="Navegación secundaria">
+        <p class="footer-card-title">Explorar</p>
+        <ul class="footer-links">
+          {footerLinks.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <section class="footer-card footer-highlight" aria-label="Mensaje de cierre">
+        <p class="footer-card-title">Nuestro enfoque</p>
+        <p>
+          Menos fricción operativa, más capacidad para responder mejor y concretar oportunidades reales.
+        </p>
+        <a class="footer-cta" href="#hero">Volver arriba</a>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 MP Digital. Ejecución comercial con enfoque responsable.</p>
+      <p>Diseñado para procesos claros, ágiles y sostenibles.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background:
+      radial-gradient(circle at top, rgba(201, 137, 75, 0.12), transparent 30%),
+      linear-gradient(180deg, #0f1720 0%, #111b26 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .footer-shell {
+    padding: clamp(4.5rem, 8vw, 6rem) 0 2rem;
+  }
+
+  .footer-intro {
+    max-width: 760px;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-eyebrow,
+  .footer-card-title,
+  .footer-badge,
+  .footer-bottom p:last-child {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .footer-eyebrow,
+  .footer-card-title,
+  .footer-badge,
+  .footer-cta,
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    color: #c9894b;
+  }
+
+  .footer-intro h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .footer-description,
+  .footer-card p,
+  .footer-links a,
+  .footer-bottom p {
+    color: #c7d1db;
+    line-height: 1.75;
+    font-size: 1rem;
+  }
+
+  .footer-description {
+    margin: 1rem 0 0;
+    max-width: 58ch;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .footer-card {
+    min-height: 100%;
+    padding: 1.75rem;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(3, 8, 12, 0.24);
+  }
+
+  .footer-brand {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f5f7fa;
+  }
+
+  .footer-brand-block p,
+  .footer-highlight p {
+    margin: 0;
+  }
+
+  .footer-badge {
+    display: inline-flex;
+    margin-top: 1.5rem;
+  }
+
+  .footer-card-title {
+    margin: 0 0 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .footer-links a {
+    transition: color 180ms ease, transform 180ms ease;
+  }
+
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    transform: translateX(2px);
+  }
+
+  .footer-highlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .footer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer-shell {
+      padding-top: 4rem;
+    }
+
+    .footer-card {
+      padding: 1.5rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+    }
+  }
+</style>
